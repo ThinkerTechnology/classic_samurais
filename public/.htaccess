@@ -1,11 +1,4 @@
-<IfModule mod_rewrite.c>
-
-  RewriteEngine On
-  RewriteBase /page
-  RewriteRule ^[pid]\.html$ - [L]
-  RewriteCond %{REQUEST_FILENAME} !-f
-  RewriteCond %{REQUEST_FILENAME} !-d
-  RewriteCond %{REQUEST_FILENAME} !-l
-  RewriteRule . /page/[pid].html [L]
-  
-</IfModule>
+Options -MultiViews
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^ index.html [QSA,L]
